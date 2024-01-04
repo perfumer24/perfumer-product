@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import { Inter as FontSanster } from 'next/font/google'
-import './globals.css'
-import { cn } from '@/lib/utils'
+import '@/shared/styles/globals.css'
+import { cn } from '@/shared/lib/utils'
 
 const fontSans = FontSanster({ subsets: ['latin'], variable: '--font-sans' })
 
@@ -16,14 +16,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang='en'>
+    <html lang="en">
       <body
         className={cn(
-          'min-h-screen bg-background font-sans antialiased',
+          'flex items-center justify-center bg-primary font-sans antialiased ',
           fontSans.variable
         )}
       >
-        {children}
+        <main className="container min-h-screen w-screen max-w-screen-sm bg-background">
+          {children}
+        </main>
       </body>
     </html>
   )
