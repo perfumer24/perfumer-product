@@ -8,7 +8,7 @@ function OnboardingPage(): JSX.Element {
   return (
     <div className="flex h-screen w-full flex-col justify-center gap-y-6">
       <IntroCarousel />
-      <Link href="/preference-survey">
+      <Link href="/finder">
         <Button className="w-full">시작하기</Button>
       </Link>
     </div>
