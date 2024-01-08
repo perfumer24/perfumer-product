@@ -3,7 +3,7 @@ import { Typography } from '@/shared/components/ui/typography'
 import React from 'react'
 import PerfumeCardCarousel from './_widgets/PerfumeCardCarousel'
 
-function PreferenceSurveyPage(): JSX.Element {
+function FinderPage(): JSX.Element {
   return (
     <div className="flex h-screen w-full flex-col justify-center gap-y-10">
       <div>
@@ -22,4 +22,4 @@ function PreferenceSurveyPage(): JSX.Element {
   )
 }
 
-export default PreferenceSurveyPage
+export default FinderPage
