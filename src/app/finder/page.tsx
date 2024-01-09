@@ -2,6 +2,7 @@ import { Button } from '@/shared/components/ui/button'
 import { Typography } from '@/shared/components/ui/typography'
 import React from 'react'
 import PerfumeCardCarousel from './_widgets/PerfumeCardCarousel'
+import Link from 'next/link'
 
 function FinderPage(): JSX.Element {
   return (
@@ -15,7 +16,9 @@ function FinderPage(): JSX.Element {
       </div>
       <PerfumeCardCarousel />
       <div className="flex flex-col gap-2">
-        <Button>나에게 맞는 향수 찾기</Button>
+        <Link href="/finder/preference-survey">
+          <Button className="w-full">나에게 맞는 향수 찾기</Button>
+        </Link>
         <Button variant="ghost">먼저 둘러볼게요.</Button>
       </div>
     </div>
