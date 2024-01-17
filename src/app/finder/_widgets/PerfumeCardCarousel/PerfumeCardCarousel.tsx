@@ -3,6 +3,7 @@
 import React from 'react'
 import { Badge } from '@/shared/components/ui/badge'
 import Image from 'next/image'
+import { AspectRatio } from '@/shared/components/ui/aspect-ratio'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Autoplay, EffectCards, Navigation } from 'swiper/modules'
@@ -49,24 +50,22 @@ function CardCarousel(): JSX.Element {
     >
       {contents.map((item, index) => {
         return (
-          <>
-            <SwiperSlide key={index} className="rounded-2xl bg-white shadow-xl">
-              <div className="relative flex h-full flex-col items-center justify-center blur-sm">
-                <Badge variant="secondary" className="absolute top-6">
-                  {item.category}
-                </Badge>
+          <SwiperSlide key={index} className="rounded-2xl bg-white shadow-xl">
+            <div className="relative flex h-full flex-col items-center justify-center blur-sm">
+              <Badge variant="secondary" className="absolute top-6">
+                {item.category}
+              </Badge>
+              <AspectRatio ratio={16 / 9}>
                 <Image
                   src={item.perfume}
                   alt={`${item.category} 향수 이미지`}
-                  width={350}
-                  height={350}
-                  style={{
-                    objectFit: 'cover',
-                  }}
+                  fill
+                  className="rounded-md object-cover"
+                  priority
                 />
-              </div>
-            </SwiperSlide>
-          </>
+              </AspectRatio>
+            </div>
+          </SwiperSlide>
         )
       })}
     </Swiper>
