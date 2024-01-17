@@ -3,15 +3,14 @@
 import React, { useState } from 'react'
 import { Typography } from '@/shared/components/ui/typography'
 import { Progress } from '@/shared/components/ui/progress'
-import { ChevronLeft } from 'lucide-react'
 import { Button } from '@/shared/components/ui/button'
 import { AspectRatio } from '@/shared/components/ui/aspect-ratio'
 
 import Image from 'next/image'
-
-import { SURVEY_CONTENTS } from '../../_constants'
+import { ChevronLeft } from 'lucide-react'
 
 import fleurDeFeur from '@/app/finder/_assets/fleur-de-feur.png'
+import { SURVEY_CONTENTS } from '@/app/finder/_constants'
 
 function PerfumeSurvey(): JSX.Element {
   const [currentStep, setCurrentStep] = useState(0)
@@ -70,7 +69,7 @@ function PerfumeSurvey(): JSX.Element {
           </div>
         </>
       ) : (
-        <div className="flex flex-col gap-20">
+        <div className="flex flex-col gap-10 ">
           <div className="flex flex-col gap-4">
             <Typography variant="h2">딥디크 오르페옹을 뿌려보세요.</Typography>
             <Typography variant="mutedText">
@@ -83,7 +82,7 @@ function PerfumeSurvey(): JSX.Element {
               src={fleurDeFeur.src}
               alt="Photo by Drew Beamer"
               fill
-              className="rounded-md object-cover"
+              className="h-full w-full object-contain"
             />
           </AspectRatio>
           <div className="flex flex-col gap-2">

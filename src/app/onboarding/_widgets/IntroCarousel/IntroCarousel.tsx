@@ -3,6 +3,7 @@
 import React from 'react'
 import Image from 'next/image'
 import { Typography } from '@/shared/components/ui/typography'
+import { AspectRatio } from '@/shared/components/ui/aspect-ratio'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
@@ -52,16 +53,19 @@ function IntroCarousel(): JSX.Element {
             <SwiperSlide key={index}>
               <div className="flex flex-col items-center justify-center gap-8">
                 <Typography variant="h2">{content.title}</Typography>
-                <Image
-                  src={content.illustration}
-                  alt={`purfume-illustration-${index + 1}`}
-                  width={index !== lastIndex ? 300 : 250}
-                  height={index !== lastIndex ? 300 : 250}
-                  loading="lazy"
-                  style={{
-                    objectFit: 'contain',
-                  }}
-                />
+                <div className="w-full min-w-[450px] pb-4">
+                  <AspectRatio ratio={16 / 9}>
+                    <Image
+                      src={content.illustration}
+                      alt={`purfume-illustration-${index + 1}`}
+                      fill
+                      priority
+                      style={{
+                        objectFit: 'contain',
+                      }}
+                    />
+                  </AspectRatio>
+                </div>
               </div>
             </SwiperSlide>
           )
