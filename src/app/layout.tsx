@@ -19,14 +19,12 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          'flex items-center justify-center bg-primary font-sans antialiased ',
+          'container flex h-screen w-screen max-w-screen-sm flex-col bg-primary font-sans antialiased',
           fontSans.variable
         )}
         suppressHydrationWarning={true}
       >
-        <main className="container min-h-screen w-screen max-w-screen-sm bg-background">
-          {children}
-        </main>
+        {children}
       </body>
     </html>
   )
