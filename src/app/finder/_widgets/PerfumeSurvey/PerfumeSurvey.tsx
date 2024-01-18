@@ -1,12 +1,14 @@
 'use client'
 
 import React, { useState } from 'react'
+
 import { Typography } from '@/shared/components/ui/typography'
 import { Progress } from '@/shared/components/ui/progress'
 import { Button } from '@/shared/components/ui/button'
 import { AspectRatio } from '@/shared/components/ui/aspect-ratio'
 
 import Image from 'next/image'
+import Link from 'next/link'
 import { ChevronLeft } from 'lucide-react'
 
 import fleurDeFeur from '@/app/finder/_assets/fleur-de-feur.png'
@@ -32,7 +34,7 @@ function PerfumeSurvey(): JSX.Element {
   }
 
   return (
-    <div className="mt-32 flex h-full flex-col gap-10">
+    <div className="flex h-screen w-full flex-col gap-10 pt-16">
       {currentStep !== SURVEY_CONTENTS.length ? (
         <>
           <div>
@@ -52,24 +54,28 @@ function PerfumeSurvey(): JSX.Element {
               <Progress value={progress} />
             </div>
           </div>
-          <Typography variant="h3">{title}</Typography>
-          <div className="flex flex-col gap-2">
-            {options?.map((option, index) => {
-              return (
-                <Button
-                  key={index}
-                  size="lg"
-                  variant="outline"
-                  onClick={handleNextOption}
-                >
-                  {option}
-                </Button>
-              )
-            })}
+          <div>
+            <Typography variant="h3" className="mb-4">
+              {title}
+            </Typography>
+            <div className="flex flex-col gap-2">
+              {options?.map((option, index) => {
+                return (
+                  <Button
+                    key={index}
+                    size="lg"
+                    variant="outline"
+                    onClick={handleNextOption}
+                  >
+                    {option}
+                  </Button>
+                )
+              })}
+            </div>
           </div>
         </>
       ) : (
-        <div className="flex flex-col gap-10 ">
+        <div className="flex flex-col gap-10">
           <div className="flex flex-col gap-4">
             <Typography variant="h2">딥디크 오르페옹을 뿌려보세요.</Typography>
             <Typography variant="mutedText">
@@ -86,8 +92,17 @@ function PerfumeSurvey(): JSX.Element {
             />
           </AspectRatio>
           <div className="flex flex-col gap-2">
-            <Button size="lg">다른 향수와 비교하기</Button>
-            <Button variant="ghost" size="lg" onClick={handleRestart}>
+            <Link href="/perfume">
+              <Button size="lg" className="w-full">
+                다른 향수와 비교하기
+              </Button>
+            </Link>
+            <Button
+              variant="ghost"
+              size="lg"
+              className="w-full"
+              onClick={handleRestart}
+            >
               다시 찾기
             </Button>
           </div>

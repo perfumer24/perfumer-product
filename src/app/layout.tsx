@@ -19,7 +19,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={cn(
-          'container flex h-screen w-screen max-w-screen-sm flex-col bg-primary font-sans antialiased',
+          'container min-h-screen w-screen max-w-screen-sm bg-primary font-sans antialiased',
           fontSans.variable
         )}
         suppressHydrationWarning={true}
