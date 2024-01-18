@@ -19,7 +19,11 @@ function FinderPage(): JSX.Element {
         <Link href="/finder/preference-survey">
           <Button className="w-full">나에게 맞는 향수 찾기</Button>
         </Link>
-        <Button variant="ghost">먼저 둘러볼게요.</Button>
+        <Link href="/perfume">
+          <Button className="w-full" variant="ghost">
+            먼저 둘러볼게요.
+          </Button>
+        </Link>
       </div>
     </div>
   )
