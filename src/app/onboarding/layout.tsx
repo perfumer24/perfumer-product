@@ -6,5 +6,5 @@ export default function OnboardingLayout({
 }: {
   children: React.ReactNode
 }) {
-  return <Content>{children}</Content>
+  return <Content className="px-2">{children}</Content>
 }
