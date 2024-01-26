@@ -11,13 +11,14 @@ import { CircleDollarSign, Layers3, Pencil } from 'lucide-react'
 function PerfumeDetailInfo(): JSX.Element {
   return (
     <section className="flex flex-col gap-6 bg-white">
-      <AspectRatio ratio={16 / 9} className=" bg-gray-50">
+      <AspectRatio ratio={16 / 9} className="bg-gray-50">
         <Image
           src={DiptyqueEauRose}
           alt={`${DiptyqueEauRose}-image`}
           fill
           style={{
             objectFit: 'cover',
+            padding: '8px',
           }}
           sizes="100vw"
           priority
@@ -25,9 +26,9 @@ function PerfumeDetailInfo(): JSX.Element {
       </AspectRatio>
       <div className="flex flex-col gap-2 pl-2">
         <Typography variant="smallText">딥디크</Typography>
-        <Typography variant="h3">플레르 드 뽀 오 드</Typography>
+        <Typography variant="h3">오 로즈</Typography>
       </div>
-      <div>
+      <div className="py-1">
         <div className="flex flex-col gap-6 pb-2 pl-2">
           <div className="flex gap-2">
             <Pencil className="p-1" />
@@ -44,7 +45,7 @@ function PerfumeDetailInfo(): JSX.Element {
               <Typography variant="h6">가격</Typography>
               <div className="flex items-center gap-1">
                 <Typography variant="inlineCode">120,000원</Typography>
-                <Typography variant="smallText">(100ml)</Typography>
+                <Typography variant="smallText">(50ml)</Typography>
               </div>
             </div>
           </div>
