@@ -49,7 +49,7 @@ export default function PerfumeLayout({
           <Typography variant="h3">로고 이름</Typography>
         )}
       </Header>
-      <Content className={`pb-20 pt-16 ${isDetailPageIn ? '' : 'px-2'}`}>
+      <Content className={`pb-20 pt-14 ${isDetailPageIn ? '' : 'px-2'}`}>
         {children}
       </Content>
       <NavigationBar className={isDetailPageIn ? 'border-none' : ''}>
@@ -59,7 +59,7 @@ export default function PerfumeLayout({
               비교함 담기
             </Button>
             <Button className="w-3/5" size="lg">
-              한줄평 남기기
+              시향 후기 남기기
             </Button>
           </div>
         ) : (

@@ -11,7 +11,7 @@ function NavigationBar({
 }: NavigationBarProps): JSX.Element {
   return (
     <div
-      className={`fixed bottom-0 flex w-full max-w-screen-sm justify-around gap-1 border-t bg-white px-4 py-2 ${className}`}
+      className={`fixed bottom-0 z-20 flex w-full max-w-screen-sm justify-around gap-1 border-t bg-white px-4 py-2 ${className}`}
       {...props}
     >
       {children}

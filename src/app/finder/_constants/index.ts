@@ -45,6 +45,6 @@ export const SURVEY_CONTENTS: SurveyContent[] = [
   {
     id: '7',
     title: '몸에 열이\n많나요?',
-    options: ['높은편', '낮은편'],
+    options: ['체온 높음', '체온 낮음'],
   },
 ]
