@@ -39,10 +39,8 @@ function PerfumeReviewList(): JSX.Element {
             <Typography variant="h6">맷</Typography>
           </div>
           <div className="flex gap-1">
-            <Badge variant="outline">#현대백화점 삼성점</Badge>
             <Badge variant="outline">#남성</Badge>
-            <Badge variant="outline">#30세</Badge>
-            <Badge variant="outline">#추천해요</Badge>
+            <Badge variant="outline">#출근할 때</Badge>
           </div>
           <Typography variant="blockquote">알랑알랑한 꽃 같은 냄새</Typography>
         </li>
@@ -55,10 +53,8 @@ function PerfumeReviewList(): JSX.Element {
             <Typography variant="h6">레오</Typography>
           </div>
           <div className="flex gap-1">
-            <Badge variant="outline">#롯데백화점 본점</Badge>
             <Badge variant="outline">#여성</Badge>
-            <Badge variant="outline">#30세</Badge>
-            <Badge variant="outline">#추천하지 않아요</Badge>
+            <Badge variant="outline">#카페에서</Badge>
           </div>
           <Typography variant="blockquote">
             흐린 가을 날의 숲속에서 하얀 피부의 남성이 사뿐사뿐 걸어다닐것 같은
