@@ -10,14 +10,17 @@ import { Frown, Laugh } from 'lucide-react'
 
 function PerfumeMatchMetric(): JSX.Element {
   return (
-    <section className="flex flex-col gap-6 bg-white p-3">
+    <section className="flex flex-col gap-8 bg-white p-3">
       <Typography variant="h4">선호 비율</Typography>
       <div className="flex flex-col items-center gap-4">
         <Typography variant="lead">선호하는 향과 60% 일치해요.</Typography>
         <Progress value={60} className="w-10/12" />
       </div>
-      <ResizablePanelGroup direction="horizontal" className="mt-3 p-1">
-        <ResizablePanel className="flex flex-col gap-3">
+      <ResizablePanelGroup
+        direction="vertical"
+        className="min-h-[150px] w-full"
+      >
+        <ResizablePanel className="flex flex-col gap-3" defaultSize={30}>
           <div className="flex items-center gap-1">
             <Laugh size={16} />
             <Typography variant="smallText">일치 항목</Typography>
@@ -29,8 +32,8 @@ function PerfumeMatchMetric(): JSX.Element {
             <Badge>데이트</Badge>
           </div>
         </ResizablePanel>
-        <ResizableHandle withHandle />
-        <ResizablePanel className="flex flex-col gap-3 pl-2">
+        <ResizableHandle withHandle className="my-4" />
+        <ResizablePanel className="flex flex-col gap-3" defaultSize={30}>
           <div className="flex items-center gap-1">
             <Frown size={16} />
             <Typography variant="smallText">불일치 항목</Typography>
