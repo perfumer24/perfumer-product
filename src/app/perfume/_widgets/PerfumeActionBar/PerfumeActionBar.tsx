@@ -1,5 +1,6 @@
 'use client'
-import React, { ChangeEvent, useState } from 'react'
+import React, { ChangeEvent, HTMLAttributes, useState } from 'react'
+import { cn } from '@/shared/lib/utils'
 
 import { Badge } from '@/shared/components/ui/badge'
 import { Button } from '@/shared/components/ui/button'
@@ -22,6 +23,8 @@ import {
 } from '@/shared/components/ui/popover'
 import { Input } from '@/shared/components/ui/input'
 
+interface PerfumeActionBarProps extends HTMLAttributes<HTMLElement> {}
+
 const situations = [
   '편한 친구 만날 때',
   '출근할 때',
@@ -32,7 +35,7 @@ const situations = [
   '썸타는 앞에서',
 ]
 
-function PerfumeActionBar(): JSX.Element {
+function PerfumeActionBar({ className }: PerfumeActionBarProps): JSX.Element {
   const [text, setText] = useState('')
 
   const handleChangeText = (event: ChangeEvent<HTMLTextAreaElement>) => {
@@ -41,7 +44,12 @@ function PerfumeActionBar(): JSX.Element {
   }
 
   return (
-    <div className="flex w-full gap-2 ">
+    <div
+      className={cn(
+        'fixed bottom-0 z-20 flex w-full max-w-screen-sm justify-around gap-1 border-t border-none bg-white px-4 py-2',
+        className
+      )}
+    >
       <Button className="w-2/5" variant="outline" size="lg">
         비교함 담기
       </Button>

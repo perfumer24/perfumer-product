@@ -1,5 +1,4 @@
 import Content from '@/shared/layouts/Content'
-import Header from '@/shared/layouts/Header'
 
 export default function OnboardingLayout({
   children,
