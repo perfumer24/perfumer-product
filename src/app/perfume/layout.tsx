@@ -1,22 +1,20 @@
 'use client'
 
-import { usePathname, useParams, useRouter } from 'next/navigation'
+import { useParams, useRouter } from 'next/navigation'
 
 import Header from '@/shared/layouts/Header'
 import Content from '@/shared/layouts/Content'
-import NavigationBar from '@/shared/layouts/NavigationBar'
+import BottomNavigationBar from '@/shared/layouts/BottomNavigationBar'
 import PerfumeActionBar from './_widgets/PerfumeActionBar'
 import { Typography } from '@/shared/components/ui/typography'
 
 import { ArrowLeft, Home, ShoppingBag, User } from 'lucide-react'
-import Link from 'next/link'
 
 export default function PerfumeLayout({
   children,
 }: {
   children: React.ReactNode
 }) {
-  const pathname = usePathname()
   const params = useParams<{ id?: string }>()
   const router = useRouter()
 
@@ -27,7 +25,7 @@ export default function PerfumeLayout({
       text: '홈',
     },
     {
-      pathname: '/compare',
+      pathname: '/compared',
       icon: <ShoppingBag />,
       text: '비교함',
     },
@@ -52,34 +50,7 @@ export default function PerfumeLayout({
       <Content className={`pb-20 pt-14 ${isDetailPageIn ? '' : 'px-2'}`}>
         {children}
       </Content>
-      <>
-        {isDetailPageIn ? (
-          <NavigationBar className="border-none">
-            <PerfumeActionBar />
-          </NavigationBar>
-        ) : (
-          <NavigationBar>
-            {links.map((link, index) => {
-              return (
-                <Link key={index} href={link.pathname}>
-                  <button
-                    className={`${
-                      link.pathname === pathname
-                        ? 'text-black'
-                        : 'text-gray-400'
-                    }`}
-                  >
-                    <div className="flex flex-col items-center gap-1">
-                      {link.icon}
-                      <p>{link.text}</p>
-                    </div>
-                  </button>
-                </Link>
-              )
-            })}
-          </NavigationBar>
-        )}
-      </>
+      {isDetailPageIn ? <PerfumeActionBar /> : <BottomNavigationBar />}
     </>
   )
 }
